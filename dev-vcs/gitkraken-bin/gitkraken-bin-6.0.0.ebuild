@@ -30,8 +30,7 @@ DEPEND="${RDEPEND}"
 
 QA_PREBUILT="opt/gitkraken-bin/resources/app.asar.unpacked/node_modules/nodegit/build/Release/nodegit.node
 	opt/gitkraken-bin/gitkraken"
-QA_PRESTRIPPED="/opt/gitkraken-bin/libffmpeg.so
-	/opt/gitkraken-bin/libnode.so"
+QA_PRESTRIPPED="/opt/gitkraken-bin/libffmpeg.so"
 
 S=${WORKDIR}/gitkraken
 
@@ -40,12 +39,16 @@ src_install() {
 	local destdir="/opt/${PN}"
 	insinto $destdir
 	doins -r locales resources
-	doins	content_shell.pak \
-		icudtl.dat \
+	# content_shell.pak \
+	doins icudtl.dat \
 		natives_blob.bin \
 		snapshot_blob.bin \
 		libffmpeg.so \
-		libnode.so
+		libEGL.so \
+		libGLESv2.so \
+		libVkICD_mock_icd.so \
+		resources.pak \
+		v8_context_snapshot.bin
 	exeinto $destdir
 	doexe gitkraken
 	doicon "$FILESDIR"/ico/gitkraken.png
