@@ -2,7 +2,7 @@
 <!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
 <repositories>
 	<repo quality="experimental" status="unofficial">
-		<name>evie</name>
+		<name>evie_overlay</name>
 		<description>evie portage overlay</description>
 		<homepage>https://lefthy.de</homepage>
 		<owner>
